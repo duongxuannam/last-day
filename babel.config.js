@@ -15,8 +15,12 @@ module.exports = {
           assets: './src/assets',
           utils: './src/utils',
           contexts: './src/contexts',
+          screens: './src/screens',
+          hooks: './src/hooks',
+          manager: './src/manager',
         },
       },
     ],
+    'react-native-reanimated/plugin',
   ],
 };

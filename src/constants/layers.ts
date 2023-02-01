@@ -1,4 +1,5 @@
 export const LAYER_SYSTEM = {
-  TOAST: 1000,
-  MODAL: 999,
+  LOADING: 1000,
+  TOAST: 999,
+  MODAL: 998,
 };

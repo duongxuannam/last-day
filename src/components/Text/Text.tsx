@@ -1,21 +1,13 @@
+import {useTheme} from 'hooks/app';
+import {observer} from 'mobx-react-lite';
 import React from 'react';
-import {StyleSheet, Text as TextRN, TextProps} from 'react-native';
+import {StyleSheet, Text as TextRN, TextProps, TextStyle} from 'react-native';
 
 interface Props extends TextProps {
   s?: number;
-  fw?:
-    | 'normal'
-    | 'bold'
-    | '100'
-    | '200'
-    | '300'
-    | '400'
-    | '500'
-    | '600'
-    | '700'
-    | '800'
-    | '900';
-  fs?: 'normal' | 'italic' | undefined;
+  fw?: TextStyle['fontWeight'];
+  fs?: TextStyle['fontStyle'];
+  f?: TextStyle['fontFamily'];
   cl?: string;
   m?: number;
   mt?: number;
@@ -33,11 +25,14 @@ interface Props extends TextProps {
   pv?: number;
   ct?: boolean;
   lh?: number;
+  defaultColor?: string;
 }
 
 const Text = ({style = {}, children, ...rest}: Props): JSX.Element => {
+  const {color} = useTheme();
+  const styleParam = {...rest, defaultColor: color.text};
   return (
-    <TextRN {...rest} style={[styles(rest).textStyle, style]}>
+    <TextRN {...rest} style={[styles(styleParam).textStyle, style]}>
       {children}
     </TextRN>
   );
@@ -47,6 +42,7 @@ const styles = ({
   fw,
   s,
   fs,
+  f,
   cl,
   m,
   mv,
@@ -64,11 +60,12 @@ const styles = ({
   pr,
   ct,
   lh,
+  defaultColor,
 }: Props) =>
   StyleSheet.create({
     textStyle: {
-      color: cl,
-      // fontFamily: f || 'BentonSans',
+      color: cl || defaultColor,
+      fontFamily: f || 'BentonSans-Book',
       fontSize: s || 20,
       fontWeight: fw || 'normal',
       fontStyle: fs || 'normal',
@@ -91,4 +88,4 @@ const styles = ({
     },
   });
 
-export default Text;
+export default observer(Text);

@@ -1,10 +1,12 @@
+import {useTheme} from 'hooks/app';
+import {observer} from 'mobx-react-lite';
 import React from 'react';
-import {StyleSheet, View as ViewRN, ViewProps} from 'react-native';
+import {StyleSheet, View as ViewRN, ViewProps, ViewStyle} from 'react-native';
 
 interface Props extends ViewProps {
-  flex?: number;
-  h?: number | number;
-  w?: number | number;
+  flex?: ViewStyle['flex'];
+  h?: number | string;
+  w?: number | string;
   r?: boolean;
   contentCenter?: boolean;
   itemCenter?: boolean;
@@ -23,17 +25,20 @@ interface Props extends ViewProps {
   pr?: number;
   ph?: number;
   pv?: number;
+  defaultColor?: string;
 }
 
 const View = ({style = {}, children, ...rest}: Props) => {
+  const {color} = useTheme();
+  const styleParam = {...rest, defaultColor: color.background};
   return (
-    <ViewRN {...rest} style={[styles(rest).viewStyle, style]}>
+    <ViewRN {...rest} style={[styles(styleParam).viewStyle, style]}>
       {children}
     </ViewRN>
   );
 };
 
-export default View;
+export default observer(View);
 
 const styles = ({
   flex,
@@ -57,11 +62,12 @@ const styles = ({
   pr,
   itemCenter,
   contentCenter,
+  defaultColor,
 }: Props) =>
   StyleSheet.create({
     viewStyle: {
       flex: flex,
-      backgroundColor: bg,
+      backgroundColor: bg || defaultColor,
       height: h,
       width: w,
       flexDirection: r ? 'row' : 'column',
