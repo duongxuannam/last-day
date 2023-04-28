@@ -1,23 +1,25 @@
 import React from 'react';
-import {gestureHandlerRootHOC} from 'react-native-gesture-handler';
-import {PortalProvider} from '@gorhom/portal';
+import { gestureHandlerRootHOC } from 'react-native-gesture-handler';
+import { PortalProvider } from '@gorhom/portal';
 import 'languages/i18n';
-import StoreProvider from 'contexts/store';
-import {store} from 'store/index';
 import AppRoot from 'navigation/index';
 import ManagerApp from 'manager/ManagerApp';
-import Loading from 'manager/Loading';
+import ErrorBoundary from 'screens/ErrorBoundary';
+import { QueryClient, QueryClientProvider } from 'react-query';
+
+export const queryClient = new QueryClient();
 
 function App(): JSX.Element {
-  return (
-    <StoreProvider value={store}>
-      <PortalProvider>
-        <AppRoot />
-        <ManagerApp />
-        <Loading />
-      </PortalProvider>
-    </StoreProvider>
-  );
+    return (
+        <ErrorBoundary>
+            <QueryClientProvider client={queryClient}>
+                <PortalProvider>
+                    <AppRoot />
+                    <ManagerApp />
+                </PortalProvider>
+            </QueryClientProvider>
+        </ErrorBoundary>
+    );
 }
 
 export default gestureHandlerRootHOC(App);

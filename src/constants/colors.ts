@@ -1,67 +1,82 @@
 export const lightTheme = {
-  text: '#011627',
-  textSubtle: '#AAB3BB',
-  textGreen: '#2EC4B6',
-  textRed: '#E71D36',
+    sa_main: '#53E88B',
+    sa_textColor: '#011627',
+    sa_background: 'white',
+    sa_border: '#F4F4F4',
 
-  background: 'white',
-  border: '#CCD2D7',
+    text: '#011627',
+    textSubtle: '#AAB3BB',
+    textGreen: '#2EC4B6',
+    textRed: '#E71D36',
 
-  tabBarActive: '#E71D36',
-  tabBarInactive: '#84929E',
+    background: 'white',
+    border: '#CCD2D7',
 
-  btnBg: '#C5D0D8',
-  btnText: '#FCFCFD',
+    tabBarActive: '#E71D36',
+    tabBarInactive: '#84929E',
 
-  btnBgRed: '#E71D36',
-  btnTextRed: 'white',
+    btnBg: '#C5D0D8',
+    btnText: '#FCFCFD',
 
-  btnBgGreen: '#2EC4B6',
-  btnTextGreen: '#F7FDFC',
+    btnBgRed: '#E71D36',
+    btnTextRed: 'white',
+
+    btnBgGreen: '#2EC4B6',
+    btnTextGreen: '#F7FDFC',
 };
 
 export type ColorType = typeof lightTheme;
 
 export const darkTheme: ColorType = {
-  text: 'white',
-  textSubtle: '#AAB3BB',
-  textGreen: '#2EC4B6',
-  textRed: '#E71D36',
+    sa_main: '#53E88B',
+    sa_textColor: 'white',
+    sa_background: '#011627',
+    sa_border: '#F4F4F4',
 
-  background: '#011627',
-  border: '#434D56',
+    text: 'white',
+    textSubtle: '#AAB3BB',
+    textGreen: '#2EC4B6',
+    textRed: '#E71D36',
 
-  tabBarActive: '#FF9F1C',
-  tabBarInactive: '#5A6772',
+    background: '#011627',
+    border: '#434D56',
 
-  btnBg: '#445664',
-  btnText: 'white',
+    tabBarActive: '#FF9F1C',
+    tabBarInactive: '#5A6772',
 
-  btnBgRed: '#E71D36',
-  btnTextRed: 'white',
+    btnBg: '#445664',
+    btnText: 'white',
 
-  btnBgGreen: '#2EC4B6',
-  btnTextGreen: 'white',
+    btnBgRed: '#E71D36',
+    btnTextRed: 'white',
+
+    btnBgGreen: '#2EC4B6',
+    btnTextGreen: 'white',
 };
 
 export const forestThem: ColorType = {
-  text: '#FEFAE0',
-  textSubtle: '#FEFAE0',
-  textGreen: '#606C38',
-  textRed: '#BC6C25',
+    sa_main: '#53E88B',
+    sa_textColor: '#FEFAE0',
+    sa_background: '#283618',
+    sa_border: '#F4F4F4',
 
-  background: '#283618',
-  border: '#606C38',
+    text: '#FEFAE0',
+    textSubtle: '#FEFAE0',
+    textGreen: '#606C38',
+    textRed: '#BC6C25',
 
-  tabBarActive: '#BC6C25',
-  tabBarInactive: '#577535',
+    background: '#283618',
+    border: '#606C38',
 
-  btnBg: '#DDA15E',
-  btnText: '#FEFAE0',
+    tabBarActive: '#BC6C25',
+    tabBarInactive: '#577535',
 
-  btnBgRed: '#BC6C25',
-  btnTextRed: '#FEFAE0',
+    btnBg: '#DDA15E',
+    btnText: '#FEFAE0',
 
-  btnBgGreen: '#606C38',
-  btnTextGreen: '#FEFAE0',
+    btnBgRed: '#BC6C25',
+    btnTextRed: '#FEFAE0',
+
+    btnBgGreen: '#606C38',
+    btnTextGreen: '#FEFAE0',
 };

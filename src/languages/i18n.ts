@@ -4,6 +4,15 @@ import {initReactI18next} from 'react-i18next';
 import en from './en.json';
 import vi from './vi.json';
 
+const locales = {
+  vi: {
+    translation: vi,
+  },
+  en: {
+    translation: en,
+  },
+};
+
 // const i18n = new I18n();
 i18n
   .use(initReactI18next) // passes i18n down to react-i18next
@@ -12,10 +21,7 @@ i18n
     // the translations
     // (tip move them in a JSON file and import them,
     // or even better, manage them via a UI: https://react.i18next.com/guides/multiple-translation-files#manage-your-translations-with-a-management-gui)
-    resources: {
-      vi,
-      en,
-    },
+    resources: locales,
     lng: Localization.locale, // if you're using a language detector, do not define the lng option
     fallbackLng: 'en',
 

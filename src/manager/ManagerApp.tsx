@@ -1,10 +1,16 @@
 import React from 'react';
-import {useInitApp} from 'hooks/app';
-import {observer} from 'mobx-react-lite';
+import { useInitApp } from 'hooks/app';
+import Onboard from './Onboard';
+import Loading from './Loading';
 
 const ManagerApp = () => {
   useInitApp();
-  return <></>;
+  return (
+    <>
+      <Onboard />
+      <Loading />
+    </>
+  );
 };
 
-export default observer(ManagerApp);
+export default ManagerApp;

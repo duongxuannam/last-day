@@ -1,50 +1,70 @@
-import {action, computed, makeAutoObservable, observable} from 'mobx';
-import {KEYS_OFFLINE_STORE, saveOfflineStore} from 'utils/offlineStore';
-import {ITheme} from 'utils/themes';
+import { create } from 'zustand';
+import { ITheme } from 'utils/themes';
+import { KEYS_OFFLINE_STORE, saveOfflineStore } from 'src/utils/offlineStore';
 
 interface IData {
-  language?: string;
-  theme?: ITheme;
-  isLoading?: boolean;
-  isLoadedFonts?: boolean;
+    language?: string;
+    theme?: ITheme;
+    isOnboard?: boolean;
 }
 
-class AppInfo {
-  data: IData = {
-    language: '',
-    theme: '',
+interface IActions {
+    setAppInfoData: (param: IData) => void;
+    setIsLoadedFonts: (param: boolean) => void;
+    setIsLoading: (param: boolean) => void;
+    setIsAppReady: (param: boolean) => void;
+}
+
+interface IAppInfo {
+    data: IData;
+    isLoading?: boolean;
+    isLoadedFonts?: boolean;
+    isAppReady?: boolean;
+    actions: IActions;
+}
+
+export const useAppInfoStore = create<IAppInfo>(set => ({
+    data: {
+        language: '',
+        theme: '',
+        isOnboard: false,
+    },
     isLoading: true,
     isLoadedFonts: false,
-  };
+    isAppReady: false,
+    actions: {
+        setLanguage: (languageParam: string) =>
+            set(state => ({
+                data: {
+                    ...state.data,
+                    language: languageParam,
+                },
+            })),
+        setAppInfoData: (data: IData) =>
+            set(state => {
+                const rs = {
+                    ...state.data,
+                    ...data,
+                };
+                saveOfflineStore(KEYS_OFFLINE_STORE.APP_INFO, rs);
+                return {
+                    data: rs,
+                };
+            }),
+        setIsLoadedFonts: (isLoadedFonts: boolean) =>
+            set(() => ({
+                isLoadedFonts,
+            })),
+        setIsLoading: (isLoading: boolean) =>
+            set(() => ({
+                isLoading,
+            })),
+        setIsAppReady: (isAppReady: boolean) =>
+            set(() => ({
+                isAppReady,
+            })),
+    },
+}));
 
-  constructor() {
-    makeAutoObservable(this, {
-      data: observable,
-      getLanguage: computed,
-      setLanguage: action,
-      setAppInfo: action,
-    });
-  }
-
-  get getLanguage() {
-    return this.data.language;
-  }
-
-  setLanguage(languageParam: string) {
-    this.data.language = languageParam;
-  }
-
-  setAppInfo(params: IData) {
-    this.data = {
-      ...this.data,
-      ...params,
-    };
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    const {isLoading, ...rest} = this.data;
-    saveOfflineStore(KEYS_OFFLINE_STORE.APP_INFO, rest);
-  }
-}
-
-export interface AppInfoType extends AppInfo {}
-
-export const appInfo = new AppInfo();
+export const useAppInfoStoreActions = () =>
+    useAppInfoStore(state => state.actions);

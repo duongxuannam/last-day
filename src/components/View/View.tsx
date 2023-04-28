@@ -1,7 +1,6 @@
-import {useTheme} from 'hooks/app';
-import {observer} from 'mobx-react-lite';
+import { useTheme } from 'hooks/app';
 import React from 'react';
-import {StyleSheet, View as ViewRN, ViewProps, ViewStyle} from 'react-native';
+import { StyleSheet, View as ViewRN, ViewProps, ViewStyle } from 'react-native';
 
 interface Props extends ViewProps {
   flex?: ViewStyle['flex'];
@@ -25,12 +24,13 @@ interface Props extends ViewProps {
   pr?: number;
   ph?: number;
   pv?: number;
+  rd?: number;
   defaultColor?: string;
 }
 
-const View = ({style = {}, children, ...rest}: Props) => {
-  const {color} = useTheme();
-  const styleParam = {...rest, defaultColor: color.background};
+const View = ({ style = {}, children, ...rest }: Props) => {
+  const { color } = useTheme();
+  const styleParam = { ...rest, defaultColor: color.sa_background };
   return (
     <ViewRN {...rest} style={[styles(styleParam).viewStyle, style]}>
       {children}
@@ -38,7 +38,7 @@ const View = ({style = {}, children, ...rest}: Props) => {
   );
 };
 
-export default observer(View);
+export default View;
 
 const styles = ({
   flex,
@@ -63,6 +63,7 @@ const styles = ({
   itemCenter,
   contentCenter,
   defaultColor,
+  rd,
 }: Props) =>
   StyleSheet.create({
     viewStyle: {
@@ -87,5 +88,6 @@ const styles = ({
       paddingRight: pr,
       alignItems: itemCenter ? 'center' : undefined,
       justifyContent: contentCenter ? 'center' : undefined,
+      borderRadius: rd,
     },
   });

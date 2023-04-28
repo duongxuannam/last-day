@@ -1,9 +1,25 @@
 {
-  "translation": {
     "label": {},
     "error": {},
     "message": {},
     "text": {"hello": "tieng viet"},
-    "content": {}
-  }
+    "content": {},
+    "onboard":{
+      "step1": {
+        "title":"vi_Find your Comfort Food here",
+        "description":"vi_Here You Can find a chef or dish for every taste and color. Enjoy!"
+      },
+      "step2": {
+        "title":"vi_Food Ninja is Where Your Comfort Food Lives",
+        "description":"vi_Enjoy a fast and smooth food delivery at your doorstep"
+      }
+    },
+    "common":{
+      "next":"vi_Next"
+    },
+    "auth":{
+      "description_title":"vi_Deliever Favorite Food",
+      "sign_in":"Login To Your Account",
+      "sign_up":"Sign Up For Free"
+    }
 }

@@ -5,6 +5,7 @@
     // Path alias config
     "baseUrl": ".",
     "paths": {
+      "src/*": ["src/*"],
       "components/*": ["src/components/*"],
       "constants/*": ["src/constants/*"],
       "languages/*": ["src/languages/*"],
@@ -12,11 +13,11 @@
       "services/*": ["src/services/*"],
       "store/*": ["src/store/*"],
       "utils/*": ["src/utils/*"],
-      "assets/*": ["src/assets/*"],
       "contexts/*": ["src/contexts/*"],
       "screens/*": ["src/screens/*"],
       "hooks/*": ["src/hooks/*"],
       "manager/*": ["src/manager/*"],
+      "assets/*": ["assets/*"],
     }
   }
 }

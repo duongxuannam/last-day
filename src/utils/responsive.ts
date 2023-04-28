@@ -1,10 +1,10 @@
-import {Dimensions, PixelRatio} from 'react-native';
+import { Dimensions, PixelRatio } from 'react-native';
 
 // Retrieve initial screen's width
-let screenWidth = Dimensions.get('window').width;
+export const screenWidth = Dimensions.get('window').width;
 
 // Retrieve initial screen's height
-let screenHeight = Dimensions.get('window').height;
+export const screenHeight = Dimensions.get('window').height;
 
 /**
  * Converts provided width percentage to independent pixel (dp).
@@ -12,14 +12,16 @@ let screenHeight = Dimensions.get('window').height;
  *                               along with the percentage symbol (%).
  * @return {number}              The calculated dp depending on current device's screen width.
  */
-export const widthPercentageToDP = (widthPercent: string) => {
-  // Parse string percentage input and convert it to number.
-  const elemWidth =
-    typeof widthPercent === 'number' ? widthPercent : parseFloat(widthPercent);
+export const widthPercentageToDP = (widthPercent: string | number) => {
+    // Parse string percentage input and convert it to number.
+    const elemWidth =
+        typeof widthPercent === 'number'
+            ? widthPercent
+            : parseFloat(widthPercent);
 
-  // Use PixelRatio.roundToNearestPixel method in order to round the layout
-  // size (dp) to the nearest one that correspons to an integer number of pixels.
-  return PixelRatio.roundToNearestPixel((screenWidth * elemWidth) / 100);
+    // Use PixelRatio.roundToNearestPixel method in order to round the layout
+    // size (dp) to the nearest one that correspons to an integer number of pixels.
+    return PixelRatio.roundToNearestPixel((screenWidth * elemWidth) / 100);
 };
 
 /**
@@ -28,16 +30,16 @@ export const widthPercentageToDP = (widthPercent: string) => {
  *                                along with the percentage symbol (%).
  * @return {number}               The calculated dp depending on current device's screen height.
  */
-export const heightPercentageToDP = (heightPercent: string) => {
-  // Parse string percentage input and convert it to number.
-  const elemHeight =
-    typeof heightPercent === 'number'
-      ? heightPercent
-      : parseFloat(heightPercent);
+export const heightPercentageToDP = (heightPercent: string | number) => {
+    // Parse string percentage input and convert it to number.
+    const elemHeight =
+        typeof heightPercent === 'number'
+            ? heightPercent
+            : parseFloat(heightPercent);
 
-  // Use PixelRatio.roundToNearestPixel method in order to round the layout
-  // size (dp) to the nearest one that correspons to an integer number of pixels.
-  return PixelRatio.roundToNearestPixel((screenHeight * elemHeight) / 100);
+    // Use PixelRatio.roundToNearestPixel method in order to round the layout
+    // size (dp) to the nearest one that correspons to an integer number of pixels.
+    return PixelRatio.roundToNearestPixel((screenHeight * elemHeight) / 100);
 };
 
 /**
@@ -78,9 +80,9 @@ export const heightPercentageToDP = (heightPercent: string) => {
 //   //   listenOrientationChange,
 //   //   removeOrientationListener,
 // };
-const STANDARD_WINDOW = {width: 375, height: 667}; // iphone 6
+const STANDARD_WINDOW = { width: 375, height: 812 }; // iphone 6
 
 export const responsiveWidth = (size: number) =>
-  (screenWidth / STANDARD_WINDOW.width) * size;
+    (screenWidth / STANDARD_WINDOW.width) * size;
 export const responsiveHeight = (size: number) =>
-  (screenHeight / STANDARD_WINDOW.height) * size;
+    (screenHeight / STANDARD_WINDOW.height) * size;
