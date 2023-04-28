@@ -1,0 +1,55 @@
+{
+  "rules": {
+    "no-unused-vars": "error",
+    "no-trailing-spaces": "error",
+    "semi": [
+      "error",
+      "always"
+    ],
+    "space-before-blocks": "warn",
+    "no-console": [
+      "error"
+    ],
+    "brace-style": [
+      "error",
+      "1tbs"
+    ],
+    "camelcase": [
+      "error",
+      {
+        "properties": "never"
+      }
+    ],
+    "keyword-spacing": "error",
+    "no-useless-catch": "off",
+    "space-infix-ops": "error",
+    "no-const-assign": "error",
+    "no-this-before-super": "error",
+    "no-unreachable": "error",
+    "constructor-super": "error",
+    "valid-typeof": "error",
+    "no-var": "error",
+    "prefer-const": "error",
+    "comma-dangle": "error",
+    "no-await-in-loop": "error",
+    "no-multi-spaces": "error",
+    "comma-spacing": "error",
+    "max-len": [
+      "error",
+      {
+        "code": 1000
+      }
+    ]
+  },
+  "env": {
+    "node": true,
+    "es6": true
+  },
+  "parser": "babel-eslint",
+  "parserOptions": {
+    "ecmaVersion": 8,
+    "ecmaFeatures": {},
+    "sourceType": "module",
+  },
+  "extends": "eslint:recommended"
+}

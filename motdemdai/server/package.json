@@ -1,0 +1,61 @@
+{
+  "name": "videochat",
+  "version": "1.0.0",
+  "description": "WebRTC example for a video chat",
+  "main": "./src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\"",
+    "dev": "nodemon --exec babel-node src/index.js",
+    "server": "node dist/index.js",
+    "start": "node dist/index.js",
+    "build": "babel src --out-dir dist",
+    "build:web": "sh ./sh/setUp.sh"
+  },
+  "keywords": [
+    "WebRTC",
+    "SocketIO"
+  ],
+  "author": "Nammm",
+  "license": "MIT",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.19.0",
+    "chalk": "^4.1.0",
+    "cron": "^1.8.2",
+    "dotenv": "^8.2.0",
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "firebase-admin": "^9.0.0",
+    "fs": "^0.0.1-security",
+    "i18n": "^0.13.2",
+    "joi": "^17.1.1",
+    "jsonwebtoken": "^8.5.1",
+    "lodash": "^4.17.19",
+    "moment": "^2.27.0",
+    "mongoose": "^5.9.24",
+    "mongoose-unique-validator": "^2.0.3",
+    "morgan": "^1.10.0",
+    "peer": "^0.6.1",
+    "redis": "^3.0.2",
+    "sharp": "^0.31.3",
+    "socket.io": "^2.3.0",
+    "split-images": "^1.0.4",
+    "uuid": "^8.3.2"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.0.0-rc.1",
+    "@babel/core": "^7.0.0-rc.1",
+    "@babel/node": "^7.0.0-rc.1",
+    "@babel/plugin-proposal-decorators": "^7.10.4",
+    "@babel/preset-env": "^7.0.0-rc.1",
+    "babel-eslint": "^10.1.0",
+    "babel-plugin-module-resolver": "^4.0.0",
+    "babel-plugin-transform-imports": "^2.0.0",
+    "babel-plugin-transform-remove-console": "^6.9.4",
+    "eslint": "^7.11.0",
+    "eslint-import-resolver-babel-module": "^5.2.0",
+    "eslint-plugin-import": "^2.22.1",
+    "jest": "26.6.0",
+    "nodemon": "^1.18.3"
+  }
+}
