@@ -1,0 +1,3 @@
+Download dùng react-native-background-downloader => download trả về %, 
+ rn-fetch-blob  xác đijnh file xoá các kiểu 
+

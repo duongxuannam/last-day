@@ -1,0 +1,10 @@
+Khác nhau các architure old and new https://medium.com/@buwanekasumanasekara/react-native-architecture-old-vs-new-33807f60e8c7
+- turbor module
+- fabric ui (worklet la gi)
+- reanimated
+- detox
+- portal (modal, toast,)
+- state manager (redux, mobx-lite)
+- linking universal link
+- catche error => react bounary (bugsng, firebase analyst)
+- config (react-native-config)

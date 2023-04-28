@@ -1,0 +1,12 @@
+ Khác nhau npm vs yarn
+
+Các lệnh git cơ bản. Git reset hardgit checkout BRAN_NAME
+Git checkout -b BRAN_NAME
+Git pull origin master
+Git commit -m”comment mit”
+Git push origin master
+Git cherry-pick
+Git fetch
+Git branch -D BRANCH_NAME
+git reset --hard HEAD
+ 

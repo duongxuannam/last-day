@@ -1,0 +1,3 @@
+setUp flavor schemes environment : https://medium.com/@manu.sharma_95999/setting-up-flavours-schemes-environments-for-react-native-apps-5932c2be0111
+
+github action and falst auto deploy https://medium.com/@thepaulo/a-simple-continuous-deployment-of-a-react-native-app-to-apples-app-store-dfcaa5b22b51

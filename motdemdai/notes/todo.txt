@@ -1,0 +1,9 @@
+ngay mai: gan gesturehandle vo cai box => done
+ngay kia render ui va thu truot thu, => done
+ngay mai cua ngay kia: viet logic code =? failed
+ngay kia cua ngay kia viet todo bang tieng anh
+
+
+12/1 - improve new level ui + complete flow game; => done
+13/1- add iamge + point for gamer + fix bug fix scroll
+14/1 - read least 10 page ultimate optimization react native

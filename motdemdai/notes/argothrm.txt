@@ -1,0 +1,2 @@
+- tìm vị trí giữa hai mãng đã sắp xếp xếp xế -> chay for tới nửa tổng lenght lenght2 mảng rồi so sánh gialenght
+so sánh giá trị từng item sau đó tăng index mỗi mãng riêng biệt biệt=> best O(n)
